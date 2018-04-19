@@ -82,5 +82,9 @@ npm run build
 - Google ES6 specification
 
 ### Release
-// TODO
+The release procedure is as follows:
+* Update the CHANGELOG.md file with the newly released version, date, and a high-level overview of changes. Commit the change.
+* Create a tag in git from the current head of master. The tag version should be the same as the version specified in the package.json file - this is the release version.
+* Update the version in the package.json file and commit the change.
+* Further development is now on the updated version number until the release process begins again.
 
