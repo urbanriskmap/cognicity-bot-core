@@ -17,7 +17,7 @@ npm i cognicity-bot-core
 
 ### Use
 
-```
+```javascript
 import Bot from 'cognicity-bot-core';
 
 // Messages object provides the bot with a vocabulary
