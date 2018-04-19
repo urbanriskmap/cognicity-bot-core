@@ -1,5 +1,4 @@
 import axios from 'axios';
-import Joi from 'joi';
 
 /**
  * Cards class - get CogniCity report card links
@@ -26,7 +25,6 @@ export default class Cards {
      */
     getCardId(properties) {
         return new Promise((resolve, reject) => {
-
             const headers = {
                 'headers': {
                     'x-api-key': this.config.CARDS_API_KEY,
@@ -45,7 +43,6 @@ export default class Cards {
                     if (res.data.created === true) {
                         resolve(res.data.cardId);
                     } else {
-                        console.log(res.data);
                         reject(new Error(`Could not get new card from server.` +
                             ` Result was ` + JSON.stringify(res.data)));
                     }

@@ -6,7 +6,7 @@
  * @class Messages
  * @param {Object} properties - class properties
  * @param {Object} properties.config - bot configuration object
- * @param {Object} properties.language - bot language object 
+ * @param {Object} properties.language - bot language object
  */
 export default class Messages {
   /**
@@ -24,7 +24,7 @@ export default class Messages {
    * @param {String} properties.userLanguage - user language code
    * @return {String} - message to send
    */
-  default (properties) {
+  default(properties) {
     let response = this.language[this.config.defaultLanguage].texts.default;
     if (properties.userLanguage in this.language) {
       response = this.language[properties.userLanguage].texts.default;
@@ -39,10 +39,11 @@ export default class Messages {
    * @param {String} properties.cardId - card ID
    * @return {String} - message to send
    */
-  card (properties) {
+  card(properties) {
     let response = this.language[this.config.defaultLanguage].texts.card;
     if (properties.userLanauge in this.language) {
-      response = this.language[properties.userLanguage].texts.card + this.config.CARDS_URL + properties.cardId;
+      response = this.language[properties.userLanguage].texts.card +
+        this.config.CARDS_URL + properties.cardId;
     }
     return response;
   }
@@ -58,7 +59,9 @@ export default class Messages {
   thanks(properties) {
     let response = this.language[this.config.defaultLanguage].texts.thanks;
     if (properties.userLanguage in this.language) {
-      response = this.language[properties.userLanguage].texts.thanks + this.config.MAP_URL + properties.regionName + '/?id=' + properties.reportId;
+      response = this.language[properties.userLanguage].texts.thanks +
+        this.config.MAP_URL + properties.regionName +
+        '/?id=' + properties.reportId;
     }
     return response;
   }
