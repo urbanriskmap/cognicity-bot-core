@@ -8,7 +8,7 @@ import messages from './messages.json';
 export default function() {
   describe('Bot Testing', function() {
     const config = {};
-    config.BOT_TOKEN = 'TOKEN',
+    config.CARDS_API = 'https://data.cognicity.com/cards/'
     config.CARDS_API_KEY = '123';
     config.CARDS_URL = 'https://cards.cognicity.com/';
     config.DEFAULT_LANGUAGE = 'en';

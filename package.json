@@ -1,7 +1,7 @@
 {
   "name": "cognicity-bot-core",
   "version": "0.0.1",
-  "description": "Core functionality for CogniCity chatbots",
+  "description": "Core language functionality for CogniCity chatbots",
   "main": "dist/index.js",
   "scripts": {
     "build": "babel src -d dist",

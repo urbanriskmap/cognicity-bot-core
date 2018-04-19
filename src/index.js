@@ -12,8 +12,10 @@ export default class Bot {
    * @param {Object} config - bot parameters
    * @param {String} config.CARDS_API - cards endpoint
    * @param {String} config.CARDS_API_KEY - cards endpoint API key
+   * @param {String} config.CARDS_URL - client card resources
+   * @param {String} config.DEFAULT_LANGUAGE - default language
    * @param {String} config.MAP_URL - client address for map
-   * @param {Object} config.language - language for bot
+   * @param {Object} config.MESSAGES - vocabulary object for bot
    */
   constructor(config) {
     // Config
@@ -33,9 +35,9 @@ export default class Bot {
    * sendCard - Method to send report card to Telegram user
    * @method sendCard
    * @param {Object} properties - properties of message to send
-   * @param {String} properties.language - Language of response
-   * @param {String} properties.network - Network for response
-   * @return {String} Message to send
+   * @param {String} properties.language - language of response
+   * @param {String} properties.network - network for response
+   * @return {String} - message to send
    */
   card(properties) {
     return new Promise((resolve, reject) => {
@@ -57,10 +59,10 @@ export default class Bot {
    * sendThanks - Method to send report link to Telegram user
    * @method sendThanks
    * @param {Object} properties - properties of message to send
-   * @param {String} properties.reportId - Report identifier for uniquie link
-   * @param {String} properties.language - Language of response
+   * @param {String} properties.reportId - report identifier for uniquie link
+   * @param {String} properties.language - language of response
    * @param {String} properties.instanceRegionCode - CogniCity region code
-   * @return {Promise} Result of _sendMessage request
+   * @return {Promise} - result of _sendMessage request
    */
   thanks(properties) {
     return new Promise((resolve, reject) =>{
@@ -78,8 +80,8 @@ export default class Bot {
    * sendDefault - Method to send default message Telegram user
    * @method sendDefault
    * @param {Object} properties - properties of message to send
-   * @param {String} properties.language - Language of response
-   * @return {Promise} Result of _sendMessage request
+   * @param {String} properties.language - language of response
+   * @return {Promise} - result of _sendMessage request
    */
   default(properties) {
     return new Promise((resolve, reject) => {
