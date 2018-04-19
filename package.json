@@ -1,0 +1,20 @@
+{
+  "name": "cognicity-bot-core",
+  "version": "0.0.1",
+  "description": "Core functionality for CogniCity chatbots",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "babel src -d dist",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "CogniCity",
+    "bot"
+  ],
+  "author": "Tomas Holderness, MIT Urban Risk Lab",
+  "license": "GPL-3.0",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.1"
+  }
+}
