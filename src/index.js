@@ -1,14 +1,7 @@
-import axios from 'axios';
 import regions from './lib/regions';
 import Cards from './lib/cards';
-import Messages from './lib/messages';
-/**
- * Class for constructing CogniCity chatbot messages
- * @class Bot
- * @param {Object} config - Bot parameters
- * @return {Object} Function methods
- **/
-// TODO - document bot params
+import Replies from './lib/replies';
+
 /**
  * Bot class - Prepated statements for CogniCity chatbot
  * @class Bot
@@ -17,30 +10,29 @@ export default class Bot {
   /**
    * constructor for class Bot
    * @param {Object} config - bot parameters
+   * @param {String} config.CARDS_API - cards endpoint
+   * @param {String} config.CARDS_API_KEY - cards endpoint API key
+   * @param {String} config.MAP_URL - client address for map
+   * @param {Object} config.language - language for bot
    */
   constructor(config) {
     // Config
     this.config = config;
 
     // Setup language and messaging
-    this.config.language = JSON.parse(config.language);
-    this.messages = new Messages(config);
+    this.replies = new Replies(config);
 
     // Cards class for handling card requests
     this.cards = new Cards(config);
 
     // Regions constants for replies
     this.regions = regions;
-
-    // External libs
-    this.axios = axios;
     }
 
   /**
    * sendCard - Method to send report card to Telegram user
    * @method sendCard
    * @param {Object} properties - properties of message to send
-   * @param {String} properties.userId - User ID or chat ID to send message to
    * @param {String} properties.language - Language of response
    * @param {String} properties.network - Network for response
    * @return {String} Message to send
@@ -52,7 +44,7 @@ export default class Bot {
     .then((cardId) => {
         // Build the response
     properties.cardId = cardId;
-        const message = this.messages.card(properties);
+        const message = this.replies.card(properties);
         // Return the message
         resolve(message);
       }).catch((err) => {
@@ -65,7 +57,6 @@ export default class Bot {
    * sendThanks - Method to send report link to Telegram user
    * @method sendThanks
    * @param {Object} properties - properties of message to send
-   * @param {String} properties.userId - User ID or chat ID to send message to
    * @param {String} properties.reportId - Report identifier for uniquie link
    * @param {String} properties.language - Language of response
    * @param {String} properties.instanceRegionCode - CogniCity region code
@@ -76,8 +67,8 @@ export default class Bot {
       const region = this.regions(properties.instanceRegionCode);
       if (region === null) reject(new Error(`Instance region not found`));
       else {
-        const message = this.messages.thanks(properties.language,
-          properties.reportId, region);
+        properties.regionName = region;
+        const message = this.replies.thanks(properties);
         resolve(message);
       }
     });
@@ -87,13 +78,12 @@ export default class Bot {
    * sendDefault - Method to send default message Telegram user
    * @method sendDefault
    * @param {Object} properties - properties of message to send
-   * @param {String} properties.userId - User ID or chat ID to send message to
    * @param {String} properties.language - Language of response
    * @return {Promise} Result of _sendMessage request
    */
   default(properties) {
     return new Promise((resolve, reject) => {
-      const message = this.messages.default(properties.language);
+      const message = this.replies.default(properties);
       resolve(message);
     });
   }
