@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/urbanriskmap/cognicity-bot-core.svg?branch=master)](https://travis-ci.org/urbanriskmap/cognicity-bot-core) [![Coverage Status](https://coveralls.io/repos/github/urbanriskmap/cognicity-bot-core/badge.svg?branch=master)](https://coveralls.io/github/urbanriskmap/cognicity-bot-core?branch=master) [![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](http://www.gnu.org/licenses/gpl-3.0) 
+
 # CogniCity Bot Core Package
 Core language functionality for CogniCity chatbots
 
