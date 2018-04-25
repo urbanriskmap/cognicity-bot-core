@@ -14,6 +14,9 @@
     "type": "git",
     "url": "https://github.com/urbanriskmap/cognicity-bot-core/"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "keywords": [
     "CogniCity",
     "bot"
