@@ -57,6 +57,9 @@ const properties = {
 }
 const message = bot.card(properties);
 
+console.log(message.text); // language to send to user
+console.log(message.link); // link to send to user
+
 // Get a thank you message for a specified report
 const properties = {
     language: 'id',             // language of the user
@@ -64,6 +67,9 @@ const properties = {
     reportId: '1'               // CogniCity report id
 }
 const message = bot.thanks(properties);
+
+console.log(message.text); // language to send to user
+console.log(message.link); // link to send to user
 ```
 
 ### Tests

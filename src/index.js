@@ -36,7 +36,7 @@ export default class Bot {
    * @method sendCard
    * @param {Object} properties - properties of message to send
    * @param {String} properties.language - language of response
-   * @param {String} properties.network - network for response
+   * @param {String} properties.network - network name for response
    * @return {String} - message to send
    */
   card(properties) {

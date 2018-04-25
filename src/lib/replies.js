@@ -22,14 +22,15 @@ export default class Replies {
    * Construct default message
    * @param {Object} properties - properties for message
    * @param {String} properties.language - user language code
-   * @return {String} - message to send
+   * @return {Object} - reply object
    */
   default(properties) {
-    let response = this.messages[this.defaultLanguage].texts.default;
+    let text = this.messages[this.defaultLanguage].texts.default;
 
     if (properties.language in this.messages) {
-      response = this.messages[properties.language].texts.default;
+      text = this.messages[properties.language].texts.default;
     }
+    const response = {text: text};
     return response;
   }
 
@@ -38,16 +39,16 @@ export default class Replies {
    * @param {Object} properties - properties for message
    * @param {String} properties.language - user language code
    * @param {String} properties.cardId - card ID
-   * @return {String} - message to send
+   * @return {Object} - reply object
    */
   card(properties) {
-    let response = this.messages[this.defaultLanguage].texts.card +
-      this.cardsUrl +properties.cardId;
+    let text = this.messages[this.defaultLanguage].texts.card;
+    let link = this.cardsUrl +properties.cardId;
 
     if (properties.language in this.messages) {
-      response = this.messages[properties.language].texts.card +
-        this.cardsUrl + properties.cardId;
+      text = this.messages[properties.language].texts.card;
     }
+    const response = {text: text, link: link};
     return response;
   }
 
@@ -57,18 +58,17 @@ export default class Replies {
    * @param {String} properties.language - user language code
    * @param {String} properties.regionName - region name for map link
    * @param {String} properties.reportId - report ID
-   * @return {String} - message to send
+   * @return {Object} - reply object
    */
   thanks(properties) {
-    let response = this.messages[this.defaultLanguage].texts.thanks +
-    this.mapUrl + properties.regionName +
+    let text = this.messages[this.defaultLanguage].texts.thanks;
+    let link = this.mapUrl + properties.regionName +
     '/?id=' + properties.reportId;
 
     if (properties.language in this.messages) {
-      response = this.messages[properties.language].texts.thanks +
-        this.mapUrl + properties.regionName +
-        '/?id=' + properties.reportId;
+      text = this.messages[properties.language].texts.thanks;
     }
+    const response = {text: text, link: link};
     return response;
   }
 }

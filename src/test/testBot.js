@@ -8,7 +8,7 @@ import messages from './messages.json';
 export default function() {
   describe('Bot Testing', function() {
     const config = {};
-    config.CARDS_API = 'https://data.cognicity.com/cards/'
+    config.CARDS_API = 'https://data.cognicity.com/cards/';
     config.CARDS_API_KEY = '123';
     config.CARDS_URL = 'https://cards.cognicity.com/';
     config.DEFAULT_LANGUAGE = 'en';
@@ -51,7 +51,8 @@ export default function() {
         };
         bot.default(props)
             .then((message) => {
-                test.value(message).is('[ID] RiskMap bot helps you report ' +
+                test.value(message.text).is(
+                '[ID] RiskMap bot helps you report ' +
                 'flooding in realtime. Send /flood to report. ' +
                 'In life-threatening situations call 911.');
                 done();
@@ -64,7 +65,8 @@ export default function() {
         };
         bot.default(props)
             .then((message) => {
-                test.value(message).is('RiskMap bot helps you report ' +
+                test.value(message.text).is(
+                'RiskMap bot helps you report ' +
                 'flooding in realtime. Send /flood to report. ' +
                 'In life-threatening situations call 911.');
                 done();
@@ -78,8 +80,12 @@ export default function() {
         };
         bot.card(props)
             .then((message) => {
-                test.value(message).is('[ID] Please report using this ' +
-                'one-time link https://cards.cognicity.com/1');
+                test.value(message.text).is(
+                '[ID] Please report using this ' +
+                'one-time link ');
+                test.value(message.link).is(
+                    'https://cards.cognicity.com/1'
+                );
                 done();
             });
     });
@@ -91,8 +97,12 @@ export default function() {
         };
         bot.card(props)
             .then((message) => {
-                test.value(message).is('Please report using this ' +
-                'one-time link https://cards.cognicity.com/1');
+                test.value(message.text).is(
+                'Please report using this ' +
+                'one-time link ');
+                test.value(message.link).is(
+                    'https://cards.cognicity.com/1'
+                );
                 done();
             });
     });
@@ -105,7 +115,8 @@ export default function() {
         cardCreated = false;
         bot.card(props)
             .catch((err) => {
-                test.value(err.message).is('Could not get new card from ' +
+                test.value(err.message).is(
+                'Could not get new card from ' +
                 'server. Result was {"created":false,"cardId":1}');
                 done();
             });
@@ -133,9 +144,12 @@ export default function() {
         };
         bot.thanks(props)
             .then((message) => {
-                test.value(message).is('[ID] Thank you for your report. ' +
-                'You can access it using this link ' +
-                'https://map.cognicity.com/jakarta/?id=1');
+                test.value(message.text).is(
+                '[ID] Thank you for your report. ' +
+                'You can access it using this link ');
+                test.value(message.link).is(
+                    'https://map.cognicity.com/jakarta/?id=1'
+                );
                 done();
             });
     });
@@ -148,9 +162,12 @@ export default function() {
         };
         bot.thanks(props)
             .then((message) => {
-                test.value(message).is('Thank you for your report. ' +
-                'You can access it using this link ' +
-                'https://map.cognicity.com/jakarta/?id=1');
+                test.value(message.text).is(
+                'Thank you for your report. ' +
+                'You can access it using this link ');
+                test.value(message.link).is(
+                    'https://map.cognicity.com/jakarta/?id=1'
+                );
                 done();
             });
     });
