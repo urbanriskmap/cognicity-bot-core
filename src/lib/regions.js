@@ -1,10 +1,12 @@
 const regions = {
+    bdy: 'bandung',
+    blr: 'bengaluru',
     brw: 'broward',
     chn: 'chennai',
     jbd: 'jakarta',
+    mum: 'mumbai',
     sby: 'surabaya',
     srg: 'semarang',
-    bdy: 'bandung',
 };
 
 export default (instanceRegionCode) => {

@@ -9,3 +9,6 @@
 
 ### v1.0.2 - 2018-04-25
 - Changed result to object with separate link and text
+
+### v1.0.3 - 2018-06-29
+- Updated list of regions
