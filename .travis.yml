@@ -16,4 +16,5 @@ deploy:
   api_key: $NPM_AUTH_TOKEN
   skip_cleanup: true
   on:
+    tags: true
     branch: master
