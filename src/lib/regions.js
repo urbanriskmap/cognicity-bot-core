@@ -4,6 +4,7 @@ const regions = {
     brw: 'broward',
     chn: 'chennai',
     jbd: 'jakarta',
+    mdh: 'madhubani',
     mum: 'mumbai',
     sby: 'surabaya',
     srg: 'semarang',

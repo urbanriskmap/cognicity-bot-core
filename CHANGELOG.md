@@ -12,3 +12,6 @@
 
 ### v1.0.3 - 2018-06-29
 - Updated list of regions
+
+### v1.0.4 - 2018-07-25
+- Updated list of regions to include Madhubani, India
