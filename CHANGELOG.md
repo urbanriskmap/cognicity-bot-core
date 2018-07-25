@@ -15,3 +15,6 @@
 
 ### v1.0.4 - 2018-07-25
 - Updated list of regions to include Madhubani, India
+
+### v1.0.5 - 2018-07-25
+- Forcing a refresh of the NPM package
