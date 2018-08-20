@@ -11,6 +11,7 @@ export default function() {
     config.CARDS_API = 'https://data.cognicity.com/cards/';
     config.CARDS_API_KEY = '123';
     config.CARDS_URL = 'https://cards.cognicity.com/';
+    config.PREP_URL = 'https://cards.cognicity.com/prep/';
     config.DEFAULT_LANGUAGE = 'en';
     config.MAP_URL = 'https://map.cognicity.com/';
     config.MESSAGES = messages;
@@ -102,6 +103,10 @@ export default function() {
                 'one-time link ');
                 test.value(message.link).is(
                     'https://cards.cognicity.com/1'
+                );
+
+                test.value(message.prepLink).is(
+                    'https://cards.cognicity.com/prep/1'
                 );
                 done();
             });

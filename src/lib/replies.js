@@ -13,6 +13,7 @@ export default class Replies {
    */
   constructor(config) {
     this.cardsUrl = config.CARDS_URL;
+    this.prepUrl = config.PREP_URL;
     this.defaultLanguage = config.DEFAULT_LANGUAGE;
     this.mapUrl = config.MAP_URL;
     this.messages = config.MESSAGES;
@@ -44,11 +45,12 @@ export default class Replies {
   card(properties) {
     let text = this.messages[this.defaultLanguage].texts.card;
     let link = this.cardsUrl +properties.cardId;
+    let prepLink = this.prepUrl + properties.cardId;
 
     if (properties.language in this.messages) {
       text = this.messages[properties.language].texts.card;
     }
-    const response = {text: text, link: link};
+    const response = {text: text, link: link, prepLink: prepLink};
     return response;
   }
 
