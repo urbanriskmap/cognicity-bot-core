@@ -19,5 +19,5 @@
 ### v1.0.5 - 2018-07-25
 - Forcing a refresh of the NPM package
 
-### v1.0.6 - 2018-08-21
+### v1.1.0 - 2018-08-21
 - Adding prep card link for Kerala deployment
