@@ -6,6 +6,7 @@ const regions = {
     jbd: 'jakarta',
     mdh: 'madhubani',
     mum: 'mumbai',
+    krl: 'kerala',
     sby: 'surabaya',
     srg: 'semarang',
 };

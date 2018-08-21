@@ -21,3 +21,6 @@
 
 ### v1.1.0 - 2018-08-21
 - Adding prep card link for Kerala deployment
+
+### v1.1.1 - 2018-08-21
+- Added Kerala instance region
