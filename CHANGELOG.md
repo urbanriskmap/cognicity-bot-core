@@ -24,3 +24,10 @@
 
 ### v1.1.1 - 2018-08-21
 - Added Kerala instance region
+
+### v1.1.2 - 2018-08-21
+- Tagging to deploy to npm
+
+### v1.1.3 - 2018-08-22
+- Add assessment cards
+
