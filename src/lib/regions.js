@@ -2,6 +2,7 @@ const regions = {
     bdy: 'bandung',
     blr: 'bengaluru',
     brw: 'broward',
+    fph: 'panhandle',
     chn: 'chennai',
     jbd: 'jakarta',
     mdh: 'madhubani',

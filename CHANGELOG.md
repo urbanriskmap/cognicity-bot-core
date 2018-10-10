@@ -31,3 +31,6 @@
 ### v1.1.3 - 2018-08-22
 - Add assessment cards
 
+### v1.1.4 - 2018-09-10
+- Add florida panhandle region code
+
