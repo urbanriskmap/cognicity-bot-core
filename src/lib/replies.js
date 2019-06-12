@@ -49,7 +49,7 @@ export default class Replies {
     let prepLink = this.prepUrl + properties.cardId;
     let assessmentLink = this.assessmentUrl + properties.cardId;
 
-    if (properties.language in this.messages) {
+    if (properties.language in this.messages && properties.language) {
       text = this.messages[properties.language].texts.card;
     }
     const response = {

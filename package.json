@@ -1,6 +1,6 @@
 {
   "name": "@urbanriskmap/cognicity-bot-core",
-  "version": "1.1.4",
+  "version": "1.1.5",
   "description": "Core language functionality for CogniCity chatbots",
   "main": "dist/index.js",
   "scripts": {
